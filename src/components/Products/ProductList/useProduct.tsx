@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { $http } from "@/api"
-import { Product } from "./model";
+import { Product } from "../model";
 
 export default function useProduct() {
   const [products, setProducts] = useState<Product[]>([])
