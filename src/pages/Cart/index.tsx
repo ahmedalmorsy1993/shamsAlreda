@@ -9,7 +9,7 @@ export default function CartPage() {
       <div className="w-full sm:w-8/12 mx-auto">
         {cart && cart.length > 0 ? (cart.map((item) => (
           <div key={item.id} className="flex items-center mb-2 justify-between border rounded shadow-sm p-5">
-            <div className="flex items-center gap-3">
+            <div className="flex grow items-center gap-3">
               <div className="w-[100px] h-[100px]">
                 <img src={item.image} alt={item.title} className="object-contain w-full h-full" />
               </div>
@@ -17,7 +17,7 @@ export default function CartPage() {
                 {item.title}
               </h4>
             </div>
-            <Button onClick={() => removeFromCart(item.id)} classNames="w-[100px]">
+            <Button onClick={() => removeFromCart(item.id)} classNames="w-[80px]">
               Remove
             </Button>
           </div>

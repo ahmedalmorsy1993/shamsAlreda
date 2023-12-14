@@ -1,9 +1,9 @@
 
 export default function Loader() {
   return (
-    <div className='transition-all duration-500 top-0 bottom-0 bg-slate-900 text-white w-screen h-screen flex justify-center items-center'>
+    <div className='absolute transition-all duration-500 top-0 bottom-0 bg-slate-900 text-white w-screen h-screen flex justify-center items-center left-0 opacity-90'>
 
-      <h1 className="text-[40px]">loading...</h1>
+      <div className="text-[40px] w-[50px] h-[50px] rounded-[50%] transition-all duration-500 animate-spin border-t-4 border-t-red-600"></div>
     </div>
   )
 }

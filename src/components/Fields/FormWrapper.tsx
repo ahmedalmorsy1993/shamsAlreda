@@ -1,12 +1,14 @@
 import { useForm, FormProvider } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import React from 'react';
 
 interface Props<T> {
   schema: any;
   onSubmit: (data: T) => void;
   defaultValues: T;
 }
+
 export function FormWrapper<T>({
   schema,
   onSubmit,
@@ -21,10 +23,16 @@ export function FormWrapper<T>({
     mode: 'all',
   });
 
+
   return (
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(onSubmit)} >
-        {children}
+        {/* Pass errors as a prop to children */}
+        {React.Children.map(children, (child) =>
+          React.isValidElement(child)
+            ? React.cloneElement<any>(child, { errors: methods.formState.errors })
+            : child
+        )}
       </form>
     </FormProvider>
   );

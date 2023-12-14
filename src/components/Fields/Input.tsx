@@ -1,16 +1,17 @@
 import { useFormContext } from "react-hook-form";
 import { Props } from "./model";
+import { FC } from "react";
+import ErrorMessage from "./ErrorMessage";
+const Input: FC<Props<HTMLInputElement>> = ({ errors, name, ...props }) => {
+  const { register } = useFormContext()
 
-export default function Input(props: Props<HTMLInputElement>) {
-  const { register, getFieldState, watch } = useFormContext()
-  const { error, invalid, isDirty } = getFieldState(props.name)
+  const classNames: string = `${errors && errors[name] && 'border-red-500'}`
 
-  watch(props.name)
-  const classNames: string = `${!invalid && isDirty && 'border-red-500'}`
-  return <div className=" min-h-[50px]">
+  return <div className=" min-h-[70px]">
     <div className="relative">
-      <input type="text" className={`py-2 px-3 outline-none border rounded h-[46px] text-[18px] w-full ${classNames}`} {...register(props.name)} {...props} />
-      {!invalid && isDirty && (<p className={`text-red-500 duration-500 transition-all absolute bottom-[-25px] `}>{error?.message}</p>)}
+      <input type="text" className={`py-2 px-3 outline-none border rounded h-[46px] text-[18px] w-full ${classNames}`} {...register(name)} {...props} />
+      <ErrorMessage errors={errors} name={name} />
     </div>
   </div>
 }
+export default Input
