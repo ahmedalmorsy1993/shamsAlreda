@@ -17,9 +17,12 @@ export default function CartPage() {
                 {item.title}
               </h4>
             </div>
-            <Button onClick={() => removeFromCart(item.id)} classNames="w-[80px]">
-              Remove
-            </Button>
+            <div className="w-[80px]">
+              <Button onClick={() => removeFromCart(item.id)} >
+                Remove
+              </Button>
+            </div>
+
           </div>
 
         ))) : <h2 className="text-center text-[20px] capitalize"> no product in cart</h2>}
