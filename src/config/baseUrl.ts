@@ -1,7 +1,7 @@
 export const getBaseUrl = (): string => {
   if (process.env.NODE_ENV === 'production') {
-    return 'https://fakestoreapi.com/';
+    return 'http://localhost:8000/api/v1/';
   } else {
-    return 'https://fakestoreapi.com/';
+    return 'http://localhost:8000/api/v1/';
   }
 };

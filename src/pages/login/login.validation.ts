@@ -7,4 +7,4 @@ export const loginSchema = yup.object({
     .required()
     .email(),
 
-});
+})  

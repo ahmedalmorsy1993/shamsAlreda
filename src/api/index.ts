@@ -1,30 +1,35 @@
 // singleton class
 import axiosInstance from '../config/axios';
 
-interface HttpType {
-  url: string;
-  data?: { [key: string]: any }
-  [key: string]: any;
+type TUrl = { url: string }
+type TGet = TUrl & { query: { [key: string]: any } }
+type TPost = TUrl & { data: { [key: string]: any } }
+
+interface IHttp {
+  get({ url, query }: TGet): Promise<unknown>
+  post(arg: TPost): Promise<unknown>
 }
 
-class Http {
-  static instance: {};
+class Http implements IHttp {
+  private static instance: Http | null = null;
 
-  constructor() {
-    if (Http.instance instanceof Http) {
-      return Http.instance;
+
+  static getInstance(): Http {
+    if (!Http.instance) {
+      Http.instance = new Http();
     }
-    Http.instance = Object.freeze(this);
+    return Http.instance;
   }
 
-  get({ url, query }: HttpType) {
+  get({ url, query }: TGet): Promise<unknown> {
     return axiosInstance({
       url,
       params: { ...query },
       method: 'get',
     });
   }
-  post({ url, data }: HttpType) {
+
+  post({ url, data }: TPost): Promise<unknown> {
     return axiosInstance({
       url,
       data,
@@ -32,4 +37,5 @@ class Http {
     });
   }
 }
-export const $http = new Http();
+
+export const $http = Http.getInstance();
