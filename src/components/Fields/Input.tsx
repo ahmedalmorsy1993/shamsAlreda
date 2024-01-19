@@ -7,9 +7,9 @@ const Input: FC<Props<HTMLInputElement>> = ({ errors, name, ...props }) => {
 
   const classNames: string = `${errors && errors[name] && 'border-red-500'}`
 
-  return <div className=" min-h-[70px]">
+  return <div className=" min-h-[80px]">
     <div className="relative">
-      <input type="text" className={`py-2 px-3 outline-none border rounded h-[46px] text-[18px] w-full ${classNames}`} {...register(name)} {...props} />
+      <input type="text" className={`py-2 px-3 outline-none border rounded-lg h-[46px] text-[18px] w-full ${classNames}`} {...register(name)} {...props} />
       <ErrorMessage errors={errors} name={name} />
     </div>
   </div>

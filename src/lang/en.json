@@ -1,0 +1,7 @@
+{
+  "login": "Login",
+  "validations": {
+    "required": "This field is required",
+    "email": "Invalid Email Pls add correct one"
+  }
+}

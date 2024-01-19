@@ -1,7 +1,8 @@
-import ProductList from "../components/Products/ProductList";
 
 export default function HomePage() {
   return (
-    <ProductList />
+    <div className="container">
+      this is home Page
+    </div>
   )
 }
