@@ -1,8 +1,13 @@
+import AboutUs from "@/components/Home/AboutUs";
+import HeroSection from "@/components/Home/HeroSection";
+import OutServices from "@/components/Home/OurServices";
 
 export default function HomePage() {
   return (
-    <div className="container">
-      this is home Page
-    </div>
+    <>
+      <HeroSection />
+      <OutServices />
+      <AboutUs />
+    </>
   )
 }

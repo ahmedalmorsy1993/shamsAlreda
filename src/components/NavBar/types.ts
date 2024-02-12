@@ -1,4 +1,5 @@
 export interface LinkType {
   text: string;
-  to: string
+  active: boolean,
+  onScroll: () => void
 }

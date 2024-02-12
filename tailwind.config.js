@@ -6,6 +6,12 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: '#BF1B2C',
+        secondary: '#50ADE5',
+        third: '#202020'
+
+      },
       container: {
         center: true,
         padding: '1rem'

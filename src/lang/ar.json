@@ -3,5 +3,11 @@
   "validations": {
     "required": "هذا الحقل مطلوب",
     "email": "البريد الالكتروني غير صحيح"
+  },
+  "navbar": {
+    "home": "الرئيسية",
+    "our_services": "خدماتنا",
+    "about_us": "من نحن",
+    "contact_us": "تواصل معنا"
   }
 }
