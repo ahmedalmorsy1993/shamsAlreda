@@ -8,7 +8,7 @@ export const useInterSection = () => {
     const observerOptions: IntersectionObserverInit = {
       root: null, // Set to null for the viewport
       rootMargin: "0px",
-      threshold: .2,
+      threshold: .7,
 
     };
 
