@@ -4,8 +4,6 @@
 @tailwind utilities;
 * {
   font-family: "Bahij";
+  scroll-padding-top: 100px !important;
   scroll-behavior: smooth;
 }
-/* body {
-  min-height: 100000vh;
-} */

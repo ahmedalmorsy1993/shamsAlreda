@@ -43,7 +43,7 @@ export const useInterSection = () => {
     if (targetTo) {
       const targetElement = document.querySelector(`[data-scroll="${targetTo}"]`);
       if (targetElement) {
-        targetElement.scrollIntoView({ behavior: "smooth", block: "start", inline: "start" });
+        targetElement.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
       }
     }
   };
