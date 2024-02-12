@@ -9,5 +9,9 @@
     "our_services": "Our Services",
     "about_us": "About Us",
     "contact_us": "Contact Us"
+  },
+  "languages": {
+    "ar": "Arabic",
+    "en": "English"
   }
 }

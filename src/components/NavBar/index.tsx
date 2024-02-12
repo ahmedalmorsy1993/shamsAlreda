@@ -4,6 +4,7 @@ import useNavBar from "./useNavBar";
 import Image from "../Core/Image";
 import { Each } from "../Core/Each";
 import { cn } from "@/utils/cn";
+import LangSwitcher from "../LangSwitcher";
 
 export default function NavBar() {
   const { links } = useNavBar()
@@ -22,7 +23,7 @@ export default function NavBar() {
           )} />
         </ul>
         <div>
-          dropdown
+          <LangSwitcher />
         </div>
 
       </div>
