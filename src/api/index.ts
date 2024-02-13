@@ -2,7 +2,7 @@
 import axiosInstance from '../config/axios';
 
 type TUrl = { url: string }
-type TGet = TUrl & { query: { [key: string]: any } }
+type TGet = TUrl & { query?: { [key: string]: any } }
 type TPost = TUrl & { data: { [key: string]: any } }
 
 interface IHttp {

@@ -3,10 +3,12 @@ import { Each } from "@/components/Core/Each";
 import { cn } from "@/utils/cn";
 // import Image from "@/components/Core/Image";
 import { useTranslation } from "react-i18next";
+import { useCardService } from "./useCardService";
 
 export default function ServiceCard() {
   const { t, i18n } = useTranslation()
   const dir = i18n.dir(i18n.language)
+  useCardService()
   return (
     <Each of={Array.from({ length: 2 })} render={(_item, index) => (
       <div className="grid grid-cols-1 lg:grid-cols-2 mb-10">
