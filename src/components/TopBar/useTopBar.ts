@@ -1,15 +1,17 @@
+import { useSettingsStore } from "@/store/settings"
 import { ISocialContact } from "./types"
 
 export const useTopBar = () => {
+  const { settings } = useSettingsStore()
   const contacts: ISocialContact[] = [
-    { name: '920006158', icon: 'phone.svg', href: 'tel:' },
-    { name: 'info@shams.alreda', icon: 'email.svg', href: 'mailto:' },
+    { name: settings['phone'], icon: 'phone.svg', href: `tel:${settings['phone']}` },
+    { name: settings['contact_email'], icon: 'email.svg', href: `mailto:${settings['contact_email']}` },
   ]
   const socials: ISocialContact[] = [
-    { name: 'google', icon: 'google.svg', href: '' },
-    { name: 'twitter', icon: 'twitter.svg', href: '' },
-    { name: 'facebook', icon: 'facebook.svg', href: '' },
-    { name: 'instagram', icon: 'instagram.svg', href: '' },
+    // { name: 'google', icon: 'google.svg', href: '' },
+    { name: 'twitter', icon: 'twitter.svg', href: settings['twitter_link'] },
+    { name: 'facebook', icon: 'facebook.svg', href: settings['facebook_link'] },
+    { name: 'instagram', icon: 'instagram.svg', href: settings['instagram_link'] },
   ]
 
 

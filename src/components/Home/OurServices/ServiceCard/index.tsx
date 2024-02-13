@@ -29,7 +29,7 @@ export default function ServiceCard() {
 
             </div>
           </div>
-          <Button variant='outline' as={Link} to="/asdasd" >
+          <Button variant='outline' as={Link} to={`/products/${_item.id}`} >
             <span>{t('button.now_more')}</span>
             <i className={cn("fa-solid fa-chevron-left animate-pulse duration-200", dir === 'ltr' && 'rotate-180')}></i>
           </Button>

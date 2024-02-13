@@ -12,7 +12,7 @@ export default function TopBar() {
           <ul className="flex items-center gap-3">
             <Each of={contacts} render={(item) => (
               <li>
-                <a href={item.href + item.name} className="flex items-center gap-1 text-white">
+                <a href={item.href} className="flex items-center gap-1 text-white">
                   <span>{item.name}</span>
                   <Image src={`/icons/${item.icon}`} alt="icon" />
                 </a>
@@ -22,7 +22,7 @@ export default function TopBar() {
           <ul className="flex items-center gap-3">
             <Each of={socials} render={(item) => (
               <li className="flex items-center gap-2 text-white">
-                <a href="">
+                <a href={item.href} target="_blank">
                   <Image src={`/icons/${item.icon}`} alt="icon" />
                 </a>
               </li>

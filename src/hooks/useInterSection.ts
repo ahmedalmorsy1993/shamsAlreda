@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export const useInterSection = () => {
   const [target, setTarget] = useState<string | null>(null);
   const [isIntersecting, setIsIntersecting] = useState<boolean>(false);
-
+  const location = useLocation()
   useEffect(() => {
     const observerOptions: IntersectionObserverInit = {
       root: null, // Set to null for the viewport
@@ -37,7 +38,7 @@ export const useInterSection = () => {
         observer.unobserve(el);
       });
     };
-  }, []);
+  }, [location]);
 
   const onScrollTo = (targetTo: string) => {
     if (targetTo) {

@@ -20,9 +20,11 @@ export default function ContactUs() {
             <div className="p-16 flex items-start flex-col justify-between h-full">
               <div className="flex flex-col gap-5 justify-between">
                 <div>
-                  <h2 className="text-white text-[24px]">يمكنكم التواصل معنا </h2>
+                  <h2 className="text-white text-[24px]">
+                    {t('heading.contact_with_us')}
+                  </h2>
                   <p className="text-white text-[24px] mt-5">
-                    من خلال روابطنا التالية خدمة علي مدار اليوم
+                    {t('heading.contact_on_links')}
                   </p>
                 </div>
                 <ul className="flex gap-3 flex-col mt-4">

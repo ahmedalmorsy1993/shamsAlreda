@@ -5,7 +5,9 @@ export const router = createBrowserRouter([
   {
     Component: DefaultLayout,
     children: [
-      { index: true, Component: lazy(() => import('../pages/index')) },
+      { index: true, Component: lazy(() => import('@/pages/index')) },
+      { path: '/products/:id', Component: lazy(() => import('@/pages/Products')) },
+      { path: '/about-us', Component: lazy(() => import('@/pages/AboutUs')) },
     ],
 
   },
