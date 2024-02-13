@@ -5,8 +5,8 @@ import { cn } from "@/utils/cn";
 import { useTranslation } from "react-i18next";
 
 export default function ServiceCard() {
-  const { t } = useTranslation()
-
+  const { t, i18n } = useTranslation()
+  const dir = i18n.dir(i18n.language)
   return (
     <Each of={Array.from({ length: 2 })} render={(_item, index) => (
       <div className="grid grid-cols-1 lg:grid-cols-2 mb-10">
@@ -29,7 +29,7 @@ export default function ServiceCard() {
           </div>
           <Button className="w-full lg:w-fit" variant='outline'>
             <span>{t('button.now_more')}</span>
-            <i className="fa-solid fa-chevron-left animate-pulse duration-200 "></i>
+            <i className={cn("fa-solid fa-chevron-left animate-pulse duration-200", dir === 'ltr' && 'rotate-180')}></i>
           </Button>
         </div>
       </div>
