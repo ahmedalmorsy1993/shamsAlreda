@@ -16,7 +16,9 @@
   },
   "heading": {
     "hero_title": "welcome in <br/> Shams AlReda Trading Est",
-    "our_service_title": "Learn about our services"
+    "our_service_title": "Learn about our services",
+    "about_us_title": "About Us",
+    "contact_us_title": "Contact Us"
   },
   "button": {
     "now_more": "Now More"

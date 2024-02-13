@@ -10,7 +10,8 @@ export default {
         primary: '#BF1B2C',
         secondary: '#50ADE5',
         third: '#202020',
-        gray: '#8A8A8A'
+        gray: '#8A8A8A',
+        'light-gray': '#FBFBFB'
 
       },
       container: {

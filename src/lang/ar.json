@@ -16,7 +16,9 @@
   },
   "heading": {
     "hero_title": "مرحبا بكم في  <br/> مؤسسة شمس الرضا التجارية",
-    "our_service_title": "تعرف علي خدماتنا"
+    "our_service_title": "تعرف علي خدماتنا",
+    "about_us_title": "من نحن",
+    "contact_us_title": "تواصل معنا"
   },
   "button": {
     "now_more": "معرفة المزيد"

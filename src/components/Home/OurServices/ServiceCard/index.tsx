@@ -29,7 +29,7 @@ export default function ServiceCard() {
               هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى
             </p>
           </div>
-          <Button className="w-full lg:w-fit" variant='outline'>
+          <Button variant='outline'>
             <span>{t('button.now_more')}</span>
             <i className={cn("fa-solid fa-chevron-left animate-pulse duration-200", dir === 'ltr' && 'rotate-180')}></i>
           </Button>
