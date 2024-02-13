@@ -2,6 +2,7 @@
 import { VariantProps, cva } from 'class-variance-authority'
 import { ButtonProps } from './types';
 import { cn } from "@/utils/cn";
+import { ElementType } from 'react';
 const buttonVariants = cva('flex items-center justify-center min-w-[167px] h-[56px] rounded-[8px] py-[16px] px-[24px] gap-3 transition-all duration-300 ', {
   variants: {
     variant: {
@@ -14,12 +15,14 @@ const buttonVariants = cva('flex items-center justify-center min-w-[167px] h-[56
     variant: 'default',
   }
 })
-interface Props extends React.ComponentProps<'button'>, VariantProps<typeof buttonVariants>, ButtonProps { }
-export default function Button({ children, loading, variant, className, ...props }: Props) {
-
+interface Props extends VariantProps<typeof buttonVariants>, ButtonProps {
+  as?: ElementType | React.ComponentType<any>;
+}
+export default function Button({ children, loading, as, variant, className, ...props }: Props) {
+  const Component = as || 'button'
   return (
-    <button disabled={loading} className={cn(buttonVariants({ className, variant }))} {...props}>
+    <Component disabled={loading} className={cn(buttonVariants({ className, variant }))} {...props}>
       {loading ? <i className="fa-solid fa-spinner animate-spin block"></i> : children}
-    </button>
+    </Component>
   )
 }

@@ -1,6 +1,8 @@
-import { ButtonHTMLAttributes } from "react";
+import { ComponentProps } from "react";
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  loading?: boolean
+const Tags = 'button' || 'a'
+export interface ButtonProps extends ComponentProps<typeof Tags> {
+  loading?: boolean,
+  [key: string]: any
 
 }

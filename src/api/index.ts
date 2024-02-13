@@ -6,8 +6,8 @@ type TGet = TUrl & { query?: { [key: string]: any } }
 type TPost = TUrl & { data: { [key: string]: any } }
 
 interface IHttp {
-  get({ url, query }: TGet): Promise<unknown>
-  post(arg: TPost): Promise<unknown>
+  get<T>({ url, query }: TGet): Promise<T>
+  post<T>(arg: TPost): Promise<T>
 }
 
 class Http implements IHttp {
@@ -21,7 +21,7 @@ class Http implements IHttp {
     return Http.instance;
   }
 
-  get({ url, query }: TGet): Promise<unknown> {
+  get<T>({ url, query }: TGet): Promise<T> {
     return axiosInstance({
       url,
       params: { ...query },
@@ -29,7 +29,7 @@ class Http implements IHttp {
     });
   }
 
-  post({ url, data }: TPost): Promise<unknown> {
+  post<T>({ url, data }: TPost): Promise<T> {
     return axiosInstance({
       url,
       data,
