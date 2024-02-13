@@ -17,5 +17,8 @@
   "heading": {
     "hero_title": "welcome in <br/> Shams AlReda Trading Est",
     "our_service_title": "Learn about our services"
+  },
+  "button": {
+    "now_more": "Now More"
   }
 }
