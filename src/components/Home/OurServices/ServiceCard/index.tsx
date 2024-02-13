@@ -14,7 +14,7 @@ export default function ServiceCard() {
           <div className="bg-primary h-full w-full "></div>
           {/* <Image src="/images/food.svg" className="object-fill h-full w-full" /> */}
         </div>
-        <div className={cn('  px-2 pt-5 lg:pt-0 sm:px-8 flex flex-col items-start justify-between gap-5 ', ((index % 2 !== 0) && 'order-first'))}>
+        <div className={cn('  px-2 pt-5 lg:pt-0 sm:px-8 flex flex-col items-start justify-between gap-5 ', ((index % 2 !== 0) && 'order-last lg:order-first'))}>
           <h3 className="text-primary text-[20px] font-bold ">
             صناعة المعجنات
 
