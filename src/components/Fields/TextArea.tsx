@@ -2,14 +2,22 @@ import { useFormContext } from "react-hook-form";
 import { Props } from "./model";
 import { FC } from "react";
 import ErrorMessage from "./ErrorMessage";
-const TextArea: FC<Props<HTMLTextAreaElement>> = ({ errors, name, ...props }) => {
+import { useTranslation } from "react-i18next";
+import { useFormWrapperContext } from "./FormWrapper";
+import { cn } from "@/utils/cn";
+const TextArea: FC<Props<HTMLTextAreaElement>> = ({ label, name, className, placeholder, ...props }) => {
     const { register } = useFormContext()
+    const { t } = useTranslation()
+    const { errors } = useFormWrapperContext()
 
     const classNames: string = `${errors && errors[name] && 'border-red-500'}`
 
-    return <div className=" min-h-[100px]">
+    return <div className={cn(" min-h-[100px]", className)}>
+        <label htmlFor={label} className="mb-2 inline-block text-third">
+            {t(`label.${label}`)}
+        </label>
         <div className="relative">
-            <textarea rows={5} type="text" className={`py-2 px-3 outline-none border rounded  text-[18px] w-full ${classNames}`} {...register(name)} {...props} />
+            <textarea id={label} rows={5} type="text" className={cn(`py-2 px-3 outline-none  border border-light-gray-200 rounded-[4px]  text-[14px] w-full`, classNames)} {...register(name)} {...props} placeholder={t(`label.${placeholder}`)} />
             <ErrorMessage errors={errors} name={name} />
         </div>
     </div>

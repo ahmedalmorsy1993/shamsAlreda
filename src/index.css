@@ -7,3 +7,24 @@
   scroll-padding-top: 150px !important;
   scroll-behavior: smooth;
 }
+
+textarea {
+  resize: none !important;
+}
+
+.footer {
+  background: linear-gradient(to bottom, #fff, #4a99d366);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+@layer components {
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-white;
+  }
+}

@@ -17,7 +17,7 @@ export default function AboutUs() {
             <h3 className="text-primary text-[28px]">
               {aboutPage.title}
             </h3>
-            <h2 className="text-third text-[32px] leading-[41.6px] mt-4">
+            <h2 className="text-third text-[18px] lg:text-[32px] leading-[31.6px] lg:leading-[41.6px] mt-4">
               {aboutPage.meta_description}
             </h2>
             <Button as={Link} to="/about-us" className=" my-4" >

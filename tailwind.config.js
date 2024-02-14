@@ -11,7 +11,10 @@ export default {
         secondary: '#50ADE5',
         third: '#202020',
         gray: '#8A8A8A',
-        'light-gray': '#FBFBFB'
+        'dark-gray': '#505056',
+        'light-gray': '#FBFBFB',
+        'light-gray-200': '#EAEAEAEA',
+        'light-gray-400': '#4A99D366',
 
       },
       container: {

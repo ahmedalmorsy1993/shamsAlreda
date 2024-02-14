@@ -23,6 +23,17 @@
     "contact_on_links": "Through our following links, 24-hour service"
   },
   "button": {
-    "now_more": "Now More"
+    "now_more": "Now More",
+    "send": "Send"
+  },
+  "label": {
+    "first_name": "First Name ",
+    "last_name": "Last Name ",
+    "email": "Email  ",
+    "message": "Message ",
+    "phone": "Phone"
+  },
+  "footer": {
+    "all_rights": "All rights reserved to the company"
   }
 }

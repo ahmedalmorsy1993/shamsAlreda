@@ -1,14 +1,17 @@
+import ContactForm from "@/components/ContctForm"
 import { Each } from "@/components/Core/Each"
 import Image from "@/components/Core/Image"
 import { ISocialContact } from "@/components/TopBar/types"
+import { useSettingsStore } from "@/store/settings"
 import { useTranslation } from "react-i18next"
 
 export default function ContactUs() {
   const { t } = useTranslation()
+  const { settings } = useSettingsStore()
   const socials: ISocialContact[] = [
-    { icon: 'phone.svg', href: 'tel:', name: '+966 3456 789' },
-    { icon: 'email.svg', href: 'tel:', name: '+966 3456 789' },
-    { icon: 'location.svg', href: '', name: 'location' },
+    { icon: 'phone.svg', href: `tel:${settings['phone']}`, name: settings['phone'] },
+    { icon: 'email.svg', href: `mailto:${settings['contact_email']}`, name: settings['contact_email'] },
+    { icon: 'location.svg', href: '', name: settings['address'] },
   ]
   return (
     <div data-scroll='contact_us' className="min-h-screen flex items-center" >
@@ -29,16 +32,19 @@ export default function ContactUs() {
                 </div>
                 <ul className="flex gap-3 flex-col mt-4">
                   <Each of={socials} render={(item) => (
-                    <li className="flex items-center gap-3 ">
-                      <Image src={`/icons/${item.icon}`} width={20} height={20} />
-                      <span className="text-white">
-                        {item.name}
-                      </span>
-                    </li>
+                    <a href={item.href ? item.href : undefined}>
+                      <li className="flex items-center gap-3 ">
+                        <Image src={`/icons/${item.icon}`} width={20} height={20} />
+                        <span className="text-white">
+                          {item.name}
+                        </span>
+                      </li>
+                    </a>
+
                   )} />
                 </ul>
               </div>
-              <div>
+              {/* <div>
                 <ul className="flex gap-3 flex-col">
                   <Each of={socials} render={(item) => (
                     <li className="flex items-center gap-3">
@@ -49,10 +55,12 @@ export default function ContactUs() {
                     </li>
                   )} />
                 </ul>
-              </div>
+              </div> */}
             </div>
           </div>
-          <div></div>
+          <div className="flex items-center w-full">
+            <ContactForm />
+          </div>
         </div>
       </div>
     </div>
