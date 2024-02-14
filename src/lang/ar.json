@@ -20,11 +20,14 @@
     "about_us_title": "من نحن",
     "contact_us_title": "تواصل معنا",
     "contact_with_us": " يمكنكم التواصل معنا",
-    "contact_on_links": "من خلال روابطنا التالية خدمة علي مدار اليوم"
+    "contact_on_links": "من خلال روابطنا التالية خدمة علي مدار اليوم",
+    "all_products": "جميع منتجاتنا"
   },
   "button": {
     "now_more": "معرفة المزيد",
-    "send": "ارسال"
+    "send": "ارسال",
+    "order_now": "اطلب اﻷن",
+    "load_more": "حمل المزيد"
   },
   "label": {
     "first_name": "الاسم الاول",

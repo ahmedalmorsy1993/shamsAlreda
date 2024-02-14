@@ -20,11 +20,14 @@
     "about_us_title": "About Us",
     "contact_us_title": "Contact Us",
     "contact_with_us": "You Can Contact With Us on",
-    "contact_on_links": "Through our following links, 24-hour service"
+    "contact_on_links": "Through our following links, 24-hour service",
+    "all_products": "All Products"
   },
   "button": {
     "now_more": "Now More",
-    "send": "Send"
+    "send": "Send",
+    "order_now": "Order Now",
+    "load_more": "Load More"
   },
   "label": {
     "first_name": "First Name ",
