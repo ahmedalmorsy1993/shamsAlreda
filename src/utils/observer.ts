@@ -13,7 +13,7 @@ class Observable {
   unsubscribe(fnName: string) {
     delete this.handlers[fnName];
   }
-  fire<T extends string>(fnName: T, data?: unknown) {
+  fire<T extends string, K>(fnName: T, data?: K) {
     if (this.handlers[fnName]) {
       return this.handlers[fnName](data)
     }
