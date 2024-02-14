@@ -17,7 +17,7 @@ export default function ProductCard({ product }: Props) {
     navigate('/')
     setTimeout(() => {
       onScrollTo('contact_us')
-    }, 500);
+    }, 1000);
   }
   return (
     <div className="min-h-[570px] rounded-[8px] border border-light-gray-200 overflow-hidden flex flex-col">
