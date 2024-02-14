@@ -55,7 +55,6 @@ export const useSettingsStore = create<State & Actions>((set) => ({
   getSettings: async () => {
     const res = await $http.get<{ data: { data: ISettings } }>({ url: 'settings' })
     const { data } = res.data
-    console.log(data);
     set((state) => ({ ...state, settings: data }))
   },
   getAboutPage: async () => {

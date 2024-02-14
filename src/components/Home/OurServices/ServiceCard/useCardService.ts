@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react"
 import { $http } from '@/api';
 import { ICategory } from "./types";
-import { useTranslation } from "react-i18next";
 
 export const useCardService = () => {
   const [categories, setCategories] = useState<ICategory[]>([])
-  const { i18n } = useTranslation()
 
 
   const fetchCategories = async () => {
@@ -17,7 +15,7 @@ export const useCardService = () => {
 
   useEffect(() => {
     fetchCategories()
-  }, [i18n.language])
+  }, [])
 
   return {
     categories

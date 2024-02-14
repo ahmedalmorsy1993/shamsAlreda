@@ -29,6 +29,7 @@ export const useLangSwitcher = () => {
   const onSwitchLang = (lang: TLang) => {
     i18n.changeLanguage(lang)
     localStorage.setItem('lang', lang)
+    window.location.reload()
   }
   return {
     i18n,

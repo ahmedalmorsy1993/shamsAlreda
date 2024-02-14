@@ -8,7 +8,7 @@ import { useSettingsStore } from "@/store/settings";
 export default function useNavBar() {
   const settingStore = useSettingsStore()
 
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const { onScrollTo, isIntersecting, target } = useInterSection()
   const links: LinkType[] = [
     { href: '/', text: t('navbar.home'), onScroll: () => onScrollTo('home'), active: isIntersecting && target == 'home' },
@@ -21,7 +21,7 @@ export default function useNavBar() {
   useEffect(() => {
     settingStore.getSettings()
     settingStore.getAboutPage()
-  }, [i18n.language])
+  }, [])
   return {
     links,
   }
