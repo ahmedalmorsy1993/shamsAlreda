@@ -5,6 +5,7 @@ import TopBar from "@/components/TopBar";
 import { useTranslation } from "react-i18next";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
+import Notification from "@/components/Notification";
 
 export default function DefaultLayout() {
   const { i18n } = useTranslation()
@@ -16,6 +17,7 @@ export default function DefaultLayout() {
   }, [location.pathname])
   return (
     <>
+      <Notification />
       <TopBar />
       <NavBar />
       <AnimatedLayout>
