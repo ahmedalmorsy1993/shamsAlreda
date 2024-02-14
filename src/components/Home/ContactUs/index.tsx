@@ -8,11 +8,18 @@ import { useTranslation } from "react-i18next"
 export default function ContactUs() {
   const { t } = useTranslation()
   const { settings } = useSettingsStore()
-  const socials: ISocialContact[] = [
+  const contacts: ISocialContact[] = [
     { icon: 'phone.svg', href: `tel:${settings['phone']}`, name: settings['phone'] },
     { icon: 'email.svg', href: `mailto:${settings['contact_email']}`, name: settings['contact_email'] },
     { icon: 'location.svg', href: '', name: settings['address'] },
   ]
+  const socials: ISocialContact[] = [
+    // { name: 'google', icon: 'google.svg', href: '' },
+    { name: 'twitter', icon: 'twitter.svg', href: settings['twitter_link'] },
+    { name: 'facebook', icon: 'facebook.svg', href: settings['facebook_link'] },
+    { name: 'instagram', icon: 'instagram.svg', href: settings['instagram_link'] },
+  ]
+
   return (
     <div data-scroll='contact_us' className="min-h-screen flex items-center" >
       <div className="container">
@@ -23,15 +30,15 @@ export default function ContactUs() {
             <div className=" px-8 py-16 lg:px-16 flex items-start flex-col justify-between h-full">
               <div className="flex flex-col gap-5 justify-between">
                 <div>
-                  <h2 className="text-white text-[24px]">
+                  <h2 className="text-white text-[18px] lg:text-[24px]">
                     {t('heading.contact_with_us')}
                   </h2>
-                  <p className="text-white text-[24px] mt-5">
+                  <p className="text-white text-[18px] lg:text-[24px] text-balance mt-5">
                     {t('heading.contact_on_links')}
                   </p>
                 </div>
                 <ul className="flex gap-3 flex-col mt-4">
-                  <Each of={socials} render={(item) => (
+                  <Each of={contacts} render={(item) => (
                     <a href={item.href ? item.href : undefined}>
                       <li className="flex items-center gap-3 ">
                         <Image src={`/icons/${item.icon}`} width={20} height={20} />
@@ -44,18 +51,15 @@ export default function ContactUs() {
                   )} />
                 </ul>
               </div>
-              {/* <div>
-                <ul className="flex gap-3 flex-col">
-                  <Each of={socials} render={(item) => (
-                    <li className="flex items-center gap-3">
-                      <Image src={`/icons/${item.icon}`} />
-                      <span className="text-white">
-                        {item.name}
-                      </span>
-                    </li>
-                  )} />
-                </ul>
-              </div> */}
+              <ul className="flex items-center gap-5 mt-10">
+                <Each of={socials} render={(item) => (
+                  <li className="flex items-center gap-2 bg-primary w-[40px] h-[40px] justify-center rounded-[50%]">
+                    <a href={item.href} target="_blank">
+                      <Image src={`/icons/${item.icon}`} alt="icon" />
+                    </a>
+                  </li>
+                )} />
+              </ul>
             </div>
           </div>
           <div className="flex items-center w-full">
