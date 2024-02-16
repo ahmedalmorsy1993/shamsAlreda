@@ -51,7 +51,17 @@ export default function NavBar() {
           <Each of={links} render={(item) => (
             <li className={cn('transition-all duration-300 cursor-pointer relative', item.active ?
               'text-primary after:h-[2px] after:w-[50%] after:transition-all after:duration-300 hover:after:w-[100%] after:ease-linear after:absolute after:bottom-[-5px] after:block after:bg-primary ' : 'text-third')} >
-              <a onClick={() => { item.onScroll(); setToggleMenu(false) }}>
+              <a onClick={() => {
+
+                if (location.pathname !== '') {
+                  navigate(item.href)
+                  setTimeout(() => {
+                    item.onScroll()
+                  }, 500);
+                }
+                item.onScroll();
+                setToggleMenu(false)
+              }}>
                 {item.text}
               </a>
             </li>
