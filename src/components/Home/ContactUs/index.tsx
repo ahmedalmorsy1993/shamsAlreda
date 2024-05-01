@@ -1,24 +1,10 @@
-import ContactForm from "@/components/ContctForm"
-import { Each } from "@/components/Core/Each"
+import ContactForm from "@/components/ContactForm"
 import Image from "@/components/Core/Image"
-import { ISocialContact } from "@/components/TopBar/types"
-import { useSettingsStore } from "@/store/settings"
 import { useTranslation } from "react-i18next"
 
 export default function ContactUs() {
   const { t } = useTranslation()
-  const { settings } = useSettingsStore()
-  const contacts: ISocialContact[] = [
-    { icon: 'phone.svg', href: `tel:${settings['phone']}`, name: settings['phone'] },
-    { icon: 'email.svg', href: `mailto:${settings['contact_email']}`, name: settings['contact_email'] },
-    { icon: 'location.svg', href: '', name: settings['address'] },
-  ]
-  const socials: ISocialContact[] = [
-    // { name: 'google', icon: 'google.svg', href: '' },
-    { name: 'twitter', icon: 'twitter.svg', href: settings['twitter_link'] },
-    { name: 'facebook', icon: 'facebook.svg', href: settings['facebook_link'] },
-    { name: 'instagram', icon: 'instagram.svg', href: settings['instagram_link'] },
-  ]
+
 
   return (
     <div data-scroll='contact_us' className="min-h-screen flex items-center" >
@@ -37,29 +23,9 @@ export default function ContactUs() {
                     {t('heading.contact_on_links')}
                   </p>
                 </div>
-                <ul className="flex gap-3 flex-col mt-4">
-                  <Each of={contacts} render={(item) => (
-                    <a href={item.href ? item.href : undefined}>
-                      <li className="flex items-center gap-3 ">
-                        <Image src={`/icons/${item.icon}`} width={20} height={20} />
-                        <span className="text-white">
-                          {item.name}
-                        </span>
-                      </li>
-                    </a>
 
-                  )} />
-                </ul>
               </div>
-              <ul className="flex items-center gap-5 mt-10">
-                <Each of={socials} render={(item) => (
-                  <li className="flex items-center gap-2 bg-primary w-[40px] h-[40px] justify-center rounded-[50%]">
-                    <a href={item.href} target="_blank">
-                      <Image src={`/icons/${item.icon}`} alt="icon" />
-                    </a>
-                  </li>
-                )} />
-              </ul>
+
             </div>
           </div>
           <div className="flex items-center w-full">

@@ -6,9 +6,12 @@ import { Each } from "../Core/Each";
 import { cn } from "@/utils/cn";
 import LangSwitcher from "../LangSwitcher";
 import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import CartItem from "./CartItem";
+import { useTranslation } from "react-i18next";
 
 export default function NavBar() {
+  const { t } = useTranslation()
   const [toggleMenu, setToggleMenu] = useState<boolean>(false)
   const onToggleMenu = () => {
     setToggleMenu(!toggleMenu)
@@ -40,7 +43,11 @@ export default function NavBar() {
           )} />
         </ul>
         <Image onClick={onToggleMenu} width={70} height={70} src="/icons/burger_menu.svg" className="block md:hidden cursor-pointer" />
-        <div>
+        <div className="flex items-center gap-10" >
+          <Link to='/login' className="text-primary bg-primary/30 rounded-md text-[15px] p-2 px-4">
+            {t('button.login')}
+          </Link>
+          <CartItem />
           <LangSwitcher />
         </div>
         <ul

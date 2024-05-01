@@ -8,7 +8,8 @@
     "home": "Home",
     "our_services": "Our Services",
     "about_us": "About Us",
-    "contact_us": "Contact Us"
+    "contact_us": "Contact Us",
+    "our_products": "Our Products"
   },
   "languages": {
     "ar": "Arabic",
@@ -21,20 +22,24 @@
     "contact_us_title": "Contact Us",
     "contact_with_us": "You Can Contact With Us on",
     "contact_on_links": "Through our following links, 24-hour service",
-    "all_products": "All Products"
+    "all_products": "All Products",
+    "our_products_title": "Our Products"
   },
   "button": {
     "now_more": "Now More",
     "send": "Send",
     "order_now": "Order Now",
-    "load_more": "Load More"
+    "load_more": "Load More",
+    "login": "Login"
   },
   "label": {
     "first_name": "First Name ",
     "last_name": "Last Name ",
     "email": "Email  ",
     "message": "Message ",
-    "phone": "Phone"
+    "phone": "Phone",
+    "available_product_count": "Available Prodct Count",
+    "you_added_all_available_product_into_cart": "You Add All Available product into cart"
   },
   "footer": {
     "all_rights": "All rights reserved to the company"

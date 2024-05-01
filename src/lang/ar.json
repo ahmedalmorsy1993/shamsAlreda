@@ -8,7 +8,8 @@
     "home": "الرئيسية",
     "our_services": "خدماتنا",
     "about_us": "من نحن",
-    "contact_us": "تواصل معنا"
+    "contact_us": "تواصل معنا",
+    "our_products": "منتجاتنا"
   },
   "languages": {
     "ar": "العربية",
@@ -21,20 +22,24 @@
     "contact_us_title": "تواصل معنا",
     "contact_with_us": " يمكنكم التواصل معنا",
     "contact_on_links": "من خلال روابطنا التالية خدمة علي مدار اليوم",
-    "all_products": "جميع منتجاتنا"
+    "all_products": "جميع منتجاتنا",
+    "our_products_title": "تعرف علي منتاجتنا"
   },
   "button": {
     "now_more": "معرفة المزيد",
     "send": "ارسال",
     "order_now": "اطلب اﻷن",
-    "load_more": "حمل المزيد"
+    "load_more": "حمل المزيد",
+    "login": "تسجيل دخول"
   },
   "label": {
     "first_name": "الاسم الاول",
     "last_name": "الاسم الاخير",
     "email": "البريد الالكتروني ",
     "message": "الرسالة ",
-    "phone": "رقم الجوال"
+    "phone": "رقم الجوال",
+    "available_product_count": "العدد المتاح في المخزون",
+    "you_added_all_available_product_into_cart": "لقد قمت باضافة كل الكمية المسموحه في سلة الشراء"
   },
   "footer": {
     "all_rights": "جميع الحقوق محفوظة للشركة "
