@@ -43,7 +43,8 @@
     "available_product_count": "العدد المتاح في المخزون",
     "you_added_all_available_product_into_cart": "لقد قمت باضافة كل الكمية المسموحه في سلة الشراء",
     "password": "كلمة المرور",
-    "no_items_in_cart": "لا توجد منتجات في سلة الشراء"
+    "no_items_in_cart": "لا توجد منتجات في سلة الشراء",
+    "qty_in_cart": "الكمية من نفس المنتج في السلة"
   },
   "footer": {
     "all_rights": "جميع الحقوق محفوظة للشركة "

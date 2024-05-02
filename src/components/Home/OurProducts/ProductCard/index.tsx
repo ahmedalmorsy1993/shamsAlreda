@@ -12,8 +12,8 @@ interface IProps {
 export default function ProductCard({ product }: IProps) {
   const { addToCart, cartItems } = useCartStore()
   const { t } = useTranslation()
-  const existingProductQty = cartItems.filter(el => el.id == product.id).length;
-  const canAdd = existingProductQty < product.quantity
+  const existingProduct = cartItems.find(el => el.id == product.id)
+  const canAdd = product.quantity !== existingProduct?.productQty
 
   const handleAddToCart = () => {
     addToCart(product)
@@ -39,10 +39,17 @@ export default function ProductCard({ product }: IProps) {
           <Button disabled={!canAdd} onClick={handleAddToCart} variant='outline' className="w-[56px] rounded-[50px] disabled:bg-slate-300 disabled:border-0 disabled:text-white"  >
             <i className={cn("fa-solid fa-cart-shopping animate-pulse duration-200")}></i>
           </Button>
-          <p className="flex items-center gap-2 text-[14px] text-gray-700">
-            {canAdd ? t('label.available_product_count') : t('label.you_added_all_available_product_into_cart')}
-            {canAdd && <strong>{product.quantity}</strong>}
-          </p>
+          <div>
+            <p className="flex items-center gap-2 text-[14px] text-gray-700">
+              {canAdd ? t('label.available_product_count') : t('label.you_added_all_available_product_into_cart')}
+              {canAdd && <strong>{product.quantity}</strong>}
+            </p>
+            {(Number(existingProduct?.productQty) > 0) && <div className="flex items-center gap-2" >
+              <span>    {t('label.qty_in_cart')}</span>
+              <strong>  {existingProduct?.productQty}</strong>
+            </div>}
+          </div>
+
         </div>}
 
       </div>

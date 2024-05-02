@@ -14,7 +14,13 @@ export const useCartStore = create<State & Actions>(set => ({
   cartItems: JSON.parse(localStorage.getItem('cart') as string) || [],
   addToCart(product) {
     set(state => {
-      const items = [...state.cartItems, product] || []
+      const items = [...state.cartItems]
+      if (items.includes(product)) {
+        product.productQty++
+
+      } else {
+        items.push(product)
+      }
       localStorage.setItem('cart', JSON.stringify(items));
       return { ...state, cartItems: items }
     })

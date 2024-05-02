@@ -5,4 +5,5 @@ export interface IProduct {
   title: string;
   price: string;
   quantity: number;
+  productQty: number
 }

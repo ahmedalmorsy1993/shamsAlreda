@@ -43,7 +43,8 @@
     "phone": "Phone",
     "available_product_count": "Available Prodct Count",
     "you_added_all_available_product_into_cart": "You Add All Available product into cart",
-    "no_items_in_cart": "No Items in Cart"
+    "no_items_in_cart": "No Items in Cart",
+    "qty_in_cart": "Qty in Cart"
   },
   "footer": {
     "all_rights": "All rights reserved to the company"

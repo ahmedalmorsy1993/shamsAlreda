@@ -11,7 +11,11 @@ export const useCard = () => {
     setLoading(true)
     const res = await $http.get<{ data: { data: IProduct[], meta: IMeta } }>({ url: 'products' })
     const { data, meta } = res.data
-    const allProducts = [...products, ...data]
+    const convertedData = data.map(el => ({
+      ...el,
+      productQty: 1
+    }))
+    const allProducts = [...products, ...convertedData]
     setProducts(allProducts)
     setMeta(meta)
     setLoading(false)
