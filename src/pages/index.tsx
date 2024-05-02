@@ -1,4 +1,4 @@
-import ContactUs from "@/components/Home/ContactUs";
+// import ContactUs from "@/components/Home/ContactUs";
 import HeroSection from "@/components/Home/HeroSection";
 import OurProducts from "../components/Home/OurProducts/index";
 
@@ -7,7 +7,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <OurProducts />
-      <ContactUs />
+      {/* <ContactUs /> */}
     </>
   )
 }

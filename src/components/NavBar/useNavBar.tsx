@@ -11,7 +11,7 @@ export default function useNavBar() {
   const links: LinkType[] = [
     { href: '/', text: t('navbar.home'), onScroll: () => onScrollTo('home'), active: isIntersecting && target == 'home' },
     { href: '/', text: t('navbar.our_products'), onScroll: () => onScrollTo('our_products'), active: isIntersecting && target == 'our_products' },
-    { href: '/', text: t('navbar.contact_us'), onScroll: () => onScrollTo('contact_us'), active: isIntersecting && target == 'contact_us' },
+    // { href: '/', text: t('navbar.contact_us'), onScroll: () => onScrollTo('contact_us'), active: isIntersecting && target == 'contact_us' },
 
   ]
 

@@ -1,10 +1,13 @@
 import { IProduct } from "@/components/Home/OurProducts/ProductCard/types";
 import { create } from "zustand";
+import { $http } from '@/api';
 
 
 interface Actions {
   addToCart: (product: IProduct) => void;
   removeFormCart: (prodId: number) => void;
+  clearItems: () => void;
+  bookNow: (orders: any) => Promise<any>;
 }
 interface State {
   cartItems: IProduct[]
@@ -33,6 +36,14 @@ export const useCartStore = create<State & Actions>(set => ({
       return newState
     })
   },
+  clearItems() {
+    localStorage.removeItem('cart')
+    set(state => ({ ...state, cartItems: [] }))
+  },
+  bookNow(orders: any) {
+
+    return $http.post({ url: 'orders', data: { orders } })
+  }
 
 
 }))
