@@ -1,16 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
-import DefaultLayout from "../layouts/Default";
 import { lazy } from "react";
+import { mainRoutes } from "./mainRoutes";
+import { authRoutes } from "./authRoutes";
 export const router = createBrowserRouter([
-  {
-    Component: DefaultLayout,
-    children: [
-      { index: true, Component: lazy(() => import('@/pages/index')) },
-      { path: '/products/:id', Component: lazy(() => import('@/pages/Products')) },
-      { path: '/about-us', Component: lazy(() => import('@/pages/AboutUs')) },
-    ],
-
-  },
-
+  ...mainRoutes,
+  ...authRoutes,
   { path: '*', Component: lazy(() => import('../pages/NotFound')) },
 ])

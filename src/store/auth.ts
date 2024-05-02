@@ -14,8 +14,16 @@ interface IUser {
   role: TRole
 }
 
+export type TSignupData = {
+  first_name: string
+  last_name: string
+  email: string
+  password: string
+}
+
 interface Actions {
   login: (data: { email: string; password: string }) => Promise<unknown>,
+  signup: (data: TSignupData) => Promise<unknown>,
   profile: () => Promise<unknown>,
   logout: () => void,
 }
@@ -43,6 +51,9 @@ export const useAuth = create<State & Actions>(set => ({
     localStorage.setItem('token', token)
     return Promise.resolve()
   },
+  signup(data) {
+    return $http.post<{ data: { token: string } }>({ url: 'register', data })
+  },
   async profile() {
     const res = await $http.get<{ data: IUser }>({ url: 'profile' })
     const { data } = res
@@ -50,7 +61,6 @@ export const useAuth = create<State & Actions>(set => ({
 
   },
   async logout() {
-    // await $http.post({ url: 'logout', data: {} })
     set(state => ({ ...state, token: null }))
     localStorage.removeItem('token')
   },

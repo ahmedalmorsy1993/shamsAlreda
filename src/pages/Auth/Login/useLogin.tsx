@@ -1,5 +1,4 @@
 import { useAuth } from "@/store/auth"
-import { observer } from "@/utils/observer"
 import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom"
@@ -18,7 +17,6 @@ export const useLogin = () => {
     try {
       setLoading(true)
       await authStore.login(formData)
-      observer.fire('reset')
       navigate('/')
     } finally {
       setLoading(false)

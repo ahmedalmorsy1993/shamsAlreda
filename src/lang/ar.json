@@ -30,7 +30,9 @@
     "send": "ارسال",
     "order_now": "اطلب اﻷن",
     "load_more": "حمل المزيد",
-    "login": "تسجيل دخول"
+    "login": "تسجيل دخول",
+    "signup": "تسجيل حساب جديد",
+    "logout": "تسجيل خروج"
   },
   "label": {
     "first_name": "الاسم الاول",
@@ -39,7 +41,9 @@
     "message": "الرسالة ",
     "phone": "رقم الجوال",
     "available_product_count": "العدد المتاح في المخزون",
-    "you_added_all_available_product_into_cart": "لقد قمت باضافة كل الكمية المسموحه في سلة الشراء"
+    "you_added_all_available_product_into_cart": "لقد قمت باضافة كل الكمية المسموحه في سلة الشراء",
+    "password": "كلمة المرور",
+    "no_items_in_cart": "لا توجد منتجات في سلة الشراء"
   },
   "footer": {
     "all_rights": "جميع الحقوق محفوظة للشركة "

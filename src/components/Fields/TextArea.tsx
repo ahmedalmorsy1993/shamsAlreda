@@ -1,5 +1,5 @@
 import { useFormContext } from "react-hook-form";
-import { Props } from "./model";
+import { Props } from "./types";
 import { FC } from "react";
 import ErrorMessage from "./ErrorMessage";
 import { useTranslation } from "react-i18next";

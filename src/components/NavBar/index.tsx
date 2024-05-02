@@ -7,11 +7,13 @@ import { cn } from "@/utils/cn";
 import LangSwitcher from "../LangSwitcher";
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import CartItem from "./CartItem";
+import CartItem from "./CartIcon";
 import { useTranslation } from "react-i18next";
+import { useAuth } from "@/store/auth";
 
 export default function NavBar() {
   const { t } = useTranslation()
+  const { token, logout } = useAuth()
   const [toggleMenu, setToggleMenu] = useState<boolean>(false)
   const onToggleMenu = () => {
     setToggleMenu(!toggleMenu)
@@ -22,7 +24,7 @@ export default function NavBar() {
   return (
     <nav className=" bg-white shadow-sm sticky top-0 z-10">
       <div className="container min-h-[80px] flex items-center justify-between relative">
-        <Image src="/logo.svg" alt="logo" className="md:flex hidden" />
+        <Link to="/"><Image src="/logo.svg" alt="logo" className="md:flex hidden" /></Link>
         <ul className="md:flex hidden gap-10 ">
           <Each of={links} render={(item) => (
             <li className={cn('transition-all duration-300 cursor-pointer relative', item.active ?
@@ -44,9 +46,9 @@ export default function NavBar() {
         </ul>
         <Image onClick={onToggleMenu} width={70} height={70} src="/icons/burger_menu.svg" className="block md:hidden cursor-pointer" />
         <div className="flex items-center gap-10" >
-          <Link to='/login' className="text-primary bg-primary/30 rounded-md text-[15px] p-2 px-4">
+          {!token ? <Link to='/login' className="text-primary bg-primary/30 rounded-md text-[15px] p-2 px-4">
             {t('button.login')}
-          </Link>
+          </Link> : <a onClick={logout} className="text-primary cursor-pointer bg-primary/30 rounded-md text-[15px] p-2 px-4">{t('button.logout')}</a>}
           <CartItem />
           <LangSwitcher />
         </div>

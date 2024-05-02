@@ -1,5 +1,4 @@
 import { useAuth } from "@/store/auth"
-import { observer } from "@/utils/observer"
 import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom"
@@ -12,14 +11,15 @@ export const useLogin = () => {
   const { t } = useTranslation()
   const defaultValues = {
     email: "",
-    password: ""
+    password: "",
+    first_name: "",
+    last_name: "",
   }
   const onSubmit = async (formData: typeof defaultValues) => {
     try {
       setLoading(true)
-      await authStore.login(formData)
-      observer.fire('reset')
-      navigate('/')
+      await authStore.signup(formData)
+      navigate('/login')
     } finally {
       setLoading(false)
     }
