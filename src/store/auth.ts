@@ -6,12 +6,21 @@ type TRole = {
   id: number;
   name: string
 }
+export interface IOrder {
+  quantity: number;
+  price: number;
+  order: { id: number, created_at: string };
+  product: { title: string; price: number; quantity: number; image: { url: string } }
+
+}
 interface IUser {
   email: string;
   first_name: string
   last_name: string
   id: number
   role: TRole
+  orders: IOrder[]
+  [key: string]: any
 }
 
 export type TSignupData = {
@@ -19,6 +28,7 @@ export type TSignupData = {
   last_name: string
   email: string
   password: string
+
 }
 
 interface Actions {
@@ -29,20 +39,21 @@ interface Actions {
 }
 interface State {
   token: string | null;
-  // user: TUser
+  user: IUser
 }
 
 export const useAuth = create<State & Actions>(set => ({
   token: localStorage.getItem('token') || null,
   user: {
-    id: 0,
+    id: 1,
     first_name: "",
     last_name: "",
     email: "",
     role: {
       name: "",
       id: 0
-    }
+    },
+    orders: []
   },
   async login(data) {
     const res = await $http.post<{ data: { token: string } }>({ url: 'login', data })

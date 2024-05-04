@@ -8,7 +8,8 @@ export interface INotify {
 export default function Notification() {
   const notify = ({ message, type }: INotify) => toast(message, {
     position: "top-center",
-    type
+    type,
+    autoClose: 1000
 
   });
   observer.subscribe('notify', notify)

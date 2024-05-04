@@ -48,7 +48,12 @@ export default function NavBar() {
         <div className="flex items-center gap-10" >
           {!token ? <Link to='/login' className="text-primary bg-primary/30 rounded-md text-[15px] p-2 px-4">
             {t('button.login')}
-          </Link> : <a onClick={logout} className="text-primary cursor-pointer bg-primary/30 rounded-md text-[15px] p-2 px-4">{t('button.logout')}</a>}
+          </Link> :
+            <div className="flex items-center gap-4">
+              <Link to="/orders" className="text-primary flex items-center gap-2"><i className="fa-solid fa-shop"></i>{t('label.orders')} </Link>
+              <a onClick={logout} className="text-primary cursor-pointer bg-primary/30 rounded-md text-[15px] p-2 px-4">{t('button.logout')}</a>
+            </div>
+          }
           <CartItem />
           <LangSwitcher />
         </div>

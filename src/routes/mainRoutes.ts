@@ -8,6 +8,7 @@ export const mainRoutes: RouteObject[] = [
     children: [
       { index: true, Component: lazy(() => import('@/pages/index')) },
       { path: "/cart", Component: lazy(() => import('@/pages/Cart')) },
+      { path: "/orders", Component: lazy(() => import('@/pages/Orders')) },
     ],
 
   },

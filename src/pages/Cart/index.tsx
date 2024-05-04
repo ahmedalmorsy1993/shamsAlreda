@@ -1,16 +1,23 @@
 import Button from "@/components/Button"
 import CartItem from "@/components/CartItem"
 import { Each } from "@/components/Core/Each"
+import { useAuth } from "@/store/auth"
 import { useCartStore } from "@/store/cart"
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
+import { useNavigate } from "react-router-dom"
 
 export default function Cart() {
   const { cartItems, bookNow, clearItems } = useCartStore()
   const [loading, setLoading] = useState<boolean>(false)
   const { t } = useTranslation()
-
+  const authStore = useAuth()
+  const navigate = useNavigate()
   const handleOrder = async () => {
+    if (!authStore.token) {
+      return navigate('/login')
+    }
+
     try {
       setLoading(true)
       const orders = cartItems.map(el => ({
@@ -20,6 +27,7 @@ export default function Cart() {
       }))
       await bookNow(orders)
       clearItems()
+      authStore.profile()
     } finally {
       setLoading(false)
 
